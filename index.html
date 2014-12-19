@@ -1,0 +1,127 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery Mobile Web App</title>
+<link href="jquery.mobile-1.3.0.min.css" rel="stylesheet" type="text/css"/>
+
+<script src="jquery-1.8.3.min.js" type="text/javascript"></script>
+<script src="jquery.mobile-1.3.0.min.js" type="text/javascript"></script>
+<script src="jQueryAssets/jquery-ui-1.9.2.dialog.custom.min.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link href="jQueryAssets/jquery.ui.core.min.css" rel="stylesheet" type="text/css">
+<!--<link href="jQueryAssets/jquery.ui.theme.css" rel="stylesheet" type="text/css">-->
+<link href="jQueryAssets/jquery.ui.dialog.min.css" rel="stylesheet" type="text/css">
+<link href="jQueryAssets/jquery.ui.resizable.min.css" rel="stylesheet" type="text/css">
+</head> 
+<body> 
+
+<div data-role="page" id="page">
+	<div data-role="header">
+		<h1>Login</h1>
+	</div>
+	<div data-role="content">
+	  <div data-role="fieldcontain">
+	    <label for="passwordinput">Enter your 4 Digit Pin:</label>
+	    <input type="password" name="passwordinput" id="passwordinput" value=""  />
+        <a href="#page2"  data-transition="slide" data-role="button"  data-icon="arrow-r"">Enter</a>
+      </div>
+	  
+
+<br>	
+	<a href="#" style="float:right"  data-icon="star">Forgot Pin?</a>
+      
+	 	
+			
+	</div>
+	<div data-role="footer">
+		<h4>iAirtime</h4>
+	</div>
+</div>
+
+<div data-role="page" id="page2">
+	<div data-role="header">
+		<h1>Home</h1>
+	</div>
+	
+	
+    
+	<ul data-role="listview" >
+	  <li><a href="#sell" data-transition="slide">Sell Credit</a><a href="#">Default</a></li>
+	  <li><a href="#topup" data-transition="slide">Top Up</a><a href="#">Default</a></li>
+  </ul>
+  
+  <ul data-role="listview" data-split-icon="info">
+	  <li><a href="#" id="DialogTrigger" data-transition="slide">Balance</a><a href="#">Balance</a></li>
+  </ul>
+  
+    <ul data-role="listview" data-split-icon="minus">
+	  <li><a href="#page">Logout</a><a href="#page">Logout</a></li>
+  </ul>
+	
+	<div data-role="footer">
+		<h4>iAirtime</h4>
+	</div>
+</div>
+
+<div data-role="page" id="sell">
+	<div data-role="header">
+		<h1>SELL CREDIT</h1>
+	</div>
+	<div data-role="content">
+	  <div data-role="fieldcontain">
+	    <label for="textinput">Phone Number:</label>
+	    <input type="text" name="textinput" id="txtPhoneNumber" value=""  />
+      </div>
+	  <div data-role="fieldcontain">
+	    <label for="textinput">Amount:</label>
+	    <input type="text" name="textinput" id="txtAmount" value=""  />
+      </div>
+	  <a href="#" data-role="button" data-icon="check">Send</a>
+	  	
+	</div>
+	<div data-role="footer">
+		<h4>iAirtime</h4>
+	</div>
+</div>
+
+<div data-role="page" id="topup">
+	<div data-role="header">
+		<h1>TOP UP</h1>
+	</div>
+	<div data-role="content">	
+		<p>Paybill Number:0000000</p>
+        <p>Account Number:Your Phone</p>
+        <div data-role="fieldcontain">
+          <label for="textinput2">Amount:</label>
+          <input type="text" name="textinput2" id="textinput2" value=""  />
+        </div>
+        <div data-role="fieldcontain">
+          <label for="textinput">Mpesa Confirmation Code:</label>
+          <input type="text" name="textinput" id="textinput" value=""  />
+        </div>	
+        
+      <a href="#" data-role="button" data-icon="check">Send</a>
+         	
+	</div>
+	<div data-role="footer">
+	  <h4>iAirtime</h4>
+	</div>
+</div>
+<div id="Dialog1">Your Account Balance is Ksh. 20,000</div>
+
+<script type="text/javascript">
+$(function() {
+	$( "#Dialog1" ).dialog({
+		title:"Account Balance",
+        hide:{effect: "slide"},
+		show:{effect: "slide"},
+		autoOpen:false
+	}); 
+    $( "#DialogTrigger" ).click(function(){
+ 		$( "#Dialog1" ).dialog("open");
+	});
+});
+</script>
+</body>
+</html>
