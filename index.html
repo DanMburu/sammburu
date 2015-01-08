@@ -77,7 +77,7 @@
 	    <label for="textinput">Amount:</label>
 	    <input type="text" name="textinput" id="txtAmount" value=""  />
       </div>
-	  <a href="#" data-role="button" data-icon="check">Send</a>
+	  <a href="#" id="sellcredit" data-role="button" data-icon="check">Send</a>
 	  	
 	</div>
 	<div data-role="footer">
@@ -101,7 +101,7 @@
           <input type="text" name="textinput" id="textinput" value=""  />
         </div>	
         
-      <a href="#" data-role="button" data-icon="check">Send</a>
+      <a href="#" id="topupbtn" data-role="button" data-icon="check">Send</a>
          	
 	</div>
 	<div data-role="footer">
@@ -112,13 +112,28 @@
 
 <script type="text/javascript">
 $(function() {
+
+Dialog1
 	$( "#Dialog1" ).dialog({
-		title:"Account Balance",
+		title:"Notification",
         hide:{effect: "slide"},
 		show:{effect: "slide"},
 		autoOpen:false
 	}); 
+    
+    
+    $( "#topupbtn" ).click(function(){
+        $( "#Dialog1" ).html('Your account has been credited with Ksh '+$('#textinput2').val());
+ 		$( "#Dialog1" ).dialog("open");
+	});
+    
+     $( "#sellcredit" ).click(function(){
+        $( "#Dialog1" ).html('Ksh '+$('#txtAmount').val()+' sent to '+$('#txtPhoneNumber').val());
+ 		$( "#Dialog1" ).dialog("open");
+	});
+    
     $( "#DialogTrigger" ).click(function(){
+        $( "#Dialog1" ).html('Your Account Balance is Ksh. 20,000');
  		$( "#Dialog1" ).dialog("open");
 	});
 });
